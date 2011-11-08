@@ -10,4 +10,9 @@ public class test {
 System.out.println("Hello World");
 	}
 
+	@Override
+	public String toString() {
+		return "test []";
+	}
+
 }
