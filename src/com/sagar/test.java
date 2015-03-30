@@ -26,13 +26,13 @@ public class test {
 	}
 	
 	public static int[] getDuplicateArray(int[] inputArray){
+		int[] outputArray = new int[0];
 		if(inputArray==null || inputArray.length<=2){
-			return new int[1];
+			return outputArray;
 		}else{
+			Set tempSet = new HashSet();
+			Map tempMap = new HashMap();
 			try{
-				int[] outputArray = new int[0];
-				Set tempSet = new HashSet();
-				Map tempMap = new HashMap();
 				System.out.println("Before for loop:");
 				for(int i=0;i<inputArray.length;i++){
 					System.out.println("In for loop:"+inputArray[i]);
@@ -50,7 +50,10 @@ public class test {
 				return outputArray;
 			}catch(Exception e){
 				e.printStackTrace();
-				return new int[1];
+				return outputArray;
+			}finally{
+				tempSet=null;
+				tempMap=null;
 			}
 		}
 	}
